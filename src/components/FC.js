@@ -1,9 +1,8 @@
-import {useContext} from 'react'
-import {ThemeContext, ThemeUpdateContext} from '../context/ThemeContext'
+import {useTheme, useThemeUpdate} from '../context/ThemeContext'
 
 export function FC() {
-  const darkTheme = useContext(ThemeContext)
-  const toggleTheme = useContext(ThemeUpdateContext)
+  const darkTheme = useTheme()
+  const toggleTheme = useThemeUpdate()
   const themeStyle = {
     backgroundColor: darkTheme ? '#333' : '#ccc',
     color: darkTheme ? '#ccc' : '#333',
@@ -13,7 +12,7 @@ export function FC() {
   console.log(darkTheme)
   return (
     <>
-      <h1 style={themeStyle}>aap</h1>
+      <h1 style={themeStyle}>{darkTheme ? 'night' : 'day'}</h1>
       <button onClick={toggleTheme}>Toggle Theme</button>
     </>
   )
