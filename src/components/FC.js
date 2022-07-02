@@ -1,8 +1,7 @@
-import {useTheme, useThemeUpdate} from '../context/ThemeContext'
+import {useTheme} from '../context/ThemeContext'
 
 export function FC() {
-  const darkTheme = useTheme()
-  const toggleTheme = useThemeUpdate()
+  const [darkTheme, toggleTheme] = useTheme()
   const themeStyle = {
     backgroundColor: darkTheme ? '#333' : '#ccc',
     color: darkTheme ? '#ccc' : '#333',

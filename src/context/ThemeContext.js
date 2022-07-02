@@ -4,11 +4,7 @@ const ThemeContext = createContext(null)
 const ThemeUpdateContext = createContext(null)
 
 export function useTheme() {
-  return useContext(ThemeContext)
-}
-
-export function useThemeUpdate() {
-  return useContext(ThemeUpdateContext)
+  return [useContext(ThemeContext), useContext(ThemeUpdateContext)]
 }
 
 export default function ThemeProvider({children}) {
